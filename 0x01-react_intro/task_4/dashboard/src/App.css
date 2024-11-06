@@ -1,0 +1,50 @@
+.App {
+  align-items: center;
+}
+
+label{
+  padding: 2mm;
+}
+
+.App-logo {
+  pointer-events: none;
+  max-width: 10rem;
+  max-height: 10rem;
+}
+
+.App-header {
+  display: flex;
+  align-items: start;
+  justify-content: left;
+  font-size: 10px;
+  color: white;
+  border-bottom: 2mm solid red;
+
+}
+
+.App-header h1 {
+  color: red;
+  font-size: 8mm;
+  padding-top: 1mm;
+}
+
+.App-body {}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-footer {
+  display: flex;
+  border-top: 2mm solid red;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-footer p {
+  align-items: center;
+  justify-content: center;
+}
