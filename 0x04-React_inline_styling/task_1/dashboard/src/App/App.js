@@ -100,6 +100,12 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		justifyContent: 'space-between',
 		flexDirection: 'row-reverse'
+	},
+
+	body: {
+	},
+
+	footer: {
 	}
 });
 
