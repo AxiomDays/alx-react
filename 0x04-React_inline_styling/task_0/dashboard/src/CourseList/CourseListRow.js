@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
 	return (
-		<tr style={{ backgroundColor: "#5f5f5ab" }}>
+		<tr style={{ backgroundColor: "#f5f5f5ab" }}>
 			{isHeader ? (
 				textSecondCell === null ? (
 					<th style={{ backgroundColor: "#deb5b545" }} colSpan={2}>{textFirstCell}</th>
