@@ -2,22 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
 
+const styles = StyleSheet.create({
+	header: {
+		backgroundColor: '#deb5b545',
+	},
+
+	normal: {
+		backgroundColor: '#f5f5f5ab',
+	},
+});
+
 const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
 	return (
-		<tr style={{ backgroundColor: "#5f5f5ab" }}>
+		<tr className={isHeader ? css(styles.header) : css(styles.normal)}>
 			{isHeader ? (
 				textSecondCell === null ? (
-					<th className={css(styles.theader)} style={{ backgroundColor: "#deb5b545" }} colSpan={2}>{textFirstCell}</th>
+					<th colSpan={2}>{textFirstCell}</th>
 				) : (
 					<>
-						<th className={css(styles.theader)} >{textFirstCell}</th>
-						<th className={css(styles.theader)} >{textSecondCell}</th>
+						<th>{textFirstCell}</th>
+						<th>{textSecondCell}</th>
 					</>
 				)
 			) : (
 				<>
-					<td className={css(styles.tdinheader)} style={{ backgroundColor: "#deb5b545" }}>{textFirstCell}</td>
-					<td className={css(styles.tdinheader)} style={{ backgroundColor: "#deb5b545" }}>{textSecondCell}</td>
+					<td>{textFirstCell}</td>
+					<td>{textSecondCell}</td>
 				</>
 			)}
 		</tr>
@@ -34,19 +44,5 @@ CourseListRow.defaultProps = {
 	isHeader: false,
 	textSecondCell: null,
 };
-
-const styles = StyleSheet.create({
-	theader: {
-		borderBottom: '1px solid #ddd'
-	},
-
-	tdinheader: {
-		width: '80 %'
-	}
-});
-
-//tr: nth - child(2) {
-//	text - align: left;
-//}
 
 export default CourseListRow;

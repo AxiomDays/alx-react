@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, css } from 'aphrodite';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Login from '../Login/Login';
@@ -9,7 +8,27 @@ import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBot
 import PropTypes from 'prop-types';
 import { getLatestNotification } from '../utils/utils';
 import BodySection from '../BodySection/BodySection';
+import { StyleSheet, css } from 'aphrodite';
 
+const styles = StyleSheet.create({
+	App: {
+		height: '100vh',
+		maxWidth: '100vw',
+	},
+	'heading-section': {
+		borderBottom: '4px solid red',
+		display: 'flex',
+		justifyContent: 'space-between',
+		flexDirection: 'row-reverse',
+	},
+	'App-footer': {
+		borderTop: '4px solid red',
+		fontSize: '1.4rem',
+		padding: '0.5em',
+		textAlign: 'center',
+		fontStyle: 'italic',
+	},
+});
 
 class App extends React.Component {
 	constructor(props) {
@@ -49,7 +68,7 @@ class App extends React.Component {
 		return (
 			<React.Fragment>
 				<div className={css(styles.App)}>
-					<div className={css(styles.heading)}>
+					<div className={css(styles['heading-section'])}>
 						<Notifications listNotifications={this.listNotifications} />
 						<Header />
 					</div>
@@ -70,7 +89,7 @@ class App extends React.Component {
 							ipsa iste vero dolor voluptates.
 						</p>
 					</BodySection>
-					<Footer />
+					<Footer className={css(styles['App-footer'])} />
 				</div>
 			</React.Fragment>
 		);
@@ -88,19 +107,5 @@ App.propTypes = {
 	isLoggedIn: PropTypes.bool,
 	logOut: PropTypes.func,
 };
-
-const styles = StyleSheet.create({
-	App: {
-		height: '100vh',
-		maxWidth: '100vw'
-	},
-
-	heading: {
-		borderBottom: '4px solid red',
-		display: 'flex',
-		justifyContent: 'space-between',
-		flexDirection: 'row-reverse'
-	}
-});
 
 export default App;

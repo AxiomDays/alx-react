@@ -1,6 +1,14 @@
 import React from 'react';
 import CourseListRow from './CourseListRow';
 import { shallow } from 'enzyme';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+beforeEach(() => {
+	StyleSheetTestUtils.suppressStyleInjection();
+});
+afterEach(() => {
+	StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe('Course List Row component test', () => {
 	it('should render without crashing', () => {
@@ -34,7 +42,7 @@ describe('Course List Row component test', () => {
 		);
 
 		expect(wrapper.find('tr').children()).toHaveLength(2);
-		expect(wrapper.find('tr').childAt(0).html()).toEqual('<td style="background-color:#deb5b545">test</td>');
-		expect(wrapper.find('tr').childAt(1).html()).toEqual('<td style="background-color:#deb5b545">test</td>');
+		expect(wrapper.find('tr').childAt(0).html()).toEqual('<td>test</td>');
+		expect(wrapper.find('tr').childAt(1).html()).toEqual('<td>test</td>');
 	});
 });
